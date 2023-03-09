@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('user/{name?}', function ($name = null) {
-    return $name;
+Route::get('/', function () {
+    return view('welcome');
 });

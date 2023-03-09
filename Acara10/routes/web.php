@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\ManagementUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('user/{name?}', function ($name = null) {
-    return $name;
+Route::get('/', function () {
+    return view('welcome');
 });
+Route::get('user', [App\Http\Controllers\ManagementUserController::class,'index']);
+
+Route::get('/home', function() {
+    return view('home');
+});
+
+Route::resource('user', ManagementUserController::class);
