@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 </head>
-
+@foreach ($profile as $profile)
 <body>
 
     <div class="bg-gradient-to-b h-screen from-gray-800 to-gray-900">
@@ -40,11 +40,12 @@
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                     <div>
-                        <h1 class="text-4xl font-bold text-green-500 sm:text-6xl lg:text-7xl">
-                            Freda Adi Fardana
+
+                        <h1 class="text-4xl font-bold text-green-500 sm:text-6xl lg:text-7xl">{{ $profile->name}}
                         </h1>
 
-                        <p class="mt-8 text-base text-neutral-100 sm:text-xl">Saya Freda Adi Fardana yang bertempat tinggal di Kabupaten Jember, Jawa Timur. Saya merupakan mahasiswa Teknik Informatika di Politeknik Negeri Jember. Desain grafis dan pemrograman merupakan hal yang menyenangkan bagi saya.</p>
+
+                        <p class="mt-8 text-base text-neutral-100 sm:text-xl">Saya Freda Adi Fardana yang bertempat tinggal di Kabupaten {{ $profile->address }}, Jawa Timur. Saya merupakan mahasiswa Teknik Informatika di Politeknik Negeri Jember. Desain grafis dan pemrograman merupakan hal yang menyenangkan bagi saya.</p>
                     </div>
 
                     <div class="min-h-full min-w-full" style="background-image: url(../asset/profile.png)">
@@ -63,5 +64,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>
+@endforeach
 
 </html>
